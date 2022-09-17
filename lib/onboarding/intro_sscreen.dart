@@ -84,8 +84,8 @@ class IntroductionScreem extends StatelessWidget {
         title: "Building Better Workplaces\nOne Team at a Time",
         image: Image.asset(
           "assets/images/on_boarding_one.png",
-          height: 275,
-          width: 280,
+          height: 220.h,
+          width: 220.w,
         ),
         footer: const Text("")),
     PageViewModel(
@@ -94,8 +94,8 @@ class IntroductionScreem extends StatelessWidget {
         title: "Building Better Workplaces\nOne Team at a Time",
         image: Image.asset(
           "assets/images/on_boarding_tow.png",
-          height: 275,
-          width: 280,
+          height: 220.h,
+          width: 220.w,
         ),
         footer: const Text("")),
     PageViewModel(
@@ -104,10 +104,10 @@ class IntroductionScreem extends StatelessWidget {
         title: "Building Better Workplaces\nOne Team at a Time",
         image: Image.asset(
           "assets/images/on_boarding_three.png",
-          height: 275,
-          width: 280,
+          height: 220.h,
+          width: 220.w,
         ),
-        footer: const Text("footer"))
+        footer: const Text(""))
   ];
 
   @override
