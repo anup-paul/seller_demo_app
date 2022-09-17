@@ -1,24 +1,20 @@
-import 'package:demo_seller_app/auth/register_screen.dart';
 import 'package:demo_seller_app/general/theme_style.dart';
 import 'package:demo_seller_app/wifgets/app_custom_button.dart';
 import 'package:demo_seller_app/wifgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class RegisterScreen extends StatefulWidget {
+  const RegisterScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<RegisterScreen> createState() => _RegisterScreenState();
 }
 
-bool rememberMe = false;
-
-class _LoginScreenState extends State<LoginScreen> {
+class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
-    final width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.w),
@@ -38,21 +34,21 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: height * 0.035,
               ),
               Text(
-                "Sign In",
+                "Create Account",
                 style: TextStyle(
                     fontSize: 20.sp,
                     fontWeight: FontWeight.bold,
                     height: 1.6.h),
               ),
               Text(
-                "Welcome back, Let's sign in to continu",
+                "Create an account to continue!",
                 style: TextStyle(fontSize: 14.sp, height: 1.6.h),
               ),
               SizedBox(
                 height: height * 0.035,
               ),
               Text(
-                "Email / phone",
+                "Shop Name",
                 style: TextStyle(
                     fontSize: 14.sp,
                     fontWeight: FontWeight.bold,
@@ -61,7 +57,35 @@ class _LoginScreenState extends State<LoginScreen> {
               SizedBox(
                 height: height * 0.01,
               ),
-              AuthTextField(hintText: "Enter your Email or phone"),
+              AuthTextField(hintText: "Enter your Shop Name"),
+              SizedBox(
+                height: height * 0.025,
+              ),
+              Text(
+                "User Name",
+                style: TextStyle(
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.bold,
+                    height: 1.6.h),
+              ),
+              SizedBox(
+                height: height * 0.01,
+              ),
+              AuthTextField(hintText: "Enter User Name"),
+              SizedBox(
+                height: height * 0.025,
+              ),
+              Text(
+                "Email / Phone",
+                style: TextStyle(
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.bold,
+                    height: 1.6.h),
+              ),
+              SizedBox(
+                height: height * 0.01,
+              ),
+              AuthTextField(hintText: "Enter your Email / Phone"),
               SizedBox(
                 height: height * 0.025,
               ),
@@ -79,42 +103,23 @@ class _LoginScreenState extends State<LoginScreen> {
               SizedBox(
                 height: height * 0.025,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      Checkbox(
-                          value: rememberMe,
-                          onChanged: (bool? newValue) {
-                            setState(() {
-                              rememberMe = newValue!;
-                            });
-                          }),
-                      Text(
-                        "Remember me",
-                        style: TextStyle(
-                            color: ThemeStyle.black,
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ],
-                  ),
-                  Text(
-                    "Forget Password ?",
-                    style: TextStyle(
-                        color: ThemeStyle.primaryColor,
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.bold),
-                  )
-                ],
+              Text(
+                "Confirm Password",
+                style: TextStyle(
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.bold,
+                    height: 1.6.h),
               ),
+              SizedBox(
+                height: height * 0.01,
+              ),
+              AuthTextField(hintText: "Enter your Confirm password"),
               SizedBox(
                 height: height * 0.025,
               ),
               AppCustomButton(
                 backgroundColor: ThemeStyle.primaryColor,
-                text: "Login",
+                text: "SIGN UP",
                 borderColor: ThemeStyle.primaryColor,
                 textColor: ThemeStyle.white,
                 onTap: () {
@@ -127,29 +132,24 @@ class _LoginScreenState extends State<LoginScreen> {
               Row(
                 children: [
                   Text(
-                    "Don't have an account? ",
+                    "Already have an account? ",
                     style: TextStyle(
                         color: ThemeStyle.lightgrey,
                         fontSize: 14.sp,
                         fontWeight: FontWeight.bold),
                   ),
-                  InkWell(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: ((context) => RegisterScreen())));
-                    },
-                    child: Text(
-                      "Register Now",
-                      style: TextStyle(
-                          color: ThemeStyle.primaryColor,
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.bold),
-                    ),
+                  Text(
+                    "Sign In",
+                    style: TextStyle(
+                        color: ThemeStyle.primaryColor,
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.bold),
                   )
                 ],
-              )
+              ),
+              SizedBox(
+                height: height * 0.025,
+              ),
             ],
           ),
         ),
