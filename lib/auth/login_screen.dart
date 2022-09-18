@@ -1,3 +1,4 @@
+import 'package:demo_seller_app/auth/forgot_password_screen.dart';
 import 'package:demo_seller_app/auth/register_screen.dart';
 import 'package:demo_seller_app/general/theme_style.dart';
 import 'package:demo_seller_app/wifgets/app_custom_button.dart';
@@ -100,12 +101,20 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ],
                   ),
-                  Text(
-                    "Forget Password ?",
-                    style: TextStyle(
-                        color: ThemeStyle.primaryColor,
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.bold),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: ((context) => const ForgotPassword())));
+                    },
+                    child: Text(
+                      "Forget Password ?",
+                      style: TextStyle(
+                          color: ThemeStyle.primaryColor,
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.bold),
+                    ),
                   )
                 ],
               ),
